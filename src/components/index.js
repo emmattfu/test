@@ -1,0 +1,6 @@
+export {default as Header} from './Header'
+export {default as Home} from './Home'
+export {default as Galery} from './GaleryComponent'
+export {default as RichText} from './RichTextComponent.jsx'
+export {default as CallUsForm} from './CallUsForm'
+export {default as Footer} from './Footer'

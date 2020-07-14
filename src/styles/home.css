@@ -1,0 +1,114 @@
+.home__title {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+}
+
+.content {
+    margin-top: 110px;
+}
+
+.content__title {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #323232;
+}
+
+.content__text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+}
+
+.call-us {
+    margin-top: 40px;
+}
+
+.call-us a {
+    color: #479C3F
+}
+
+.call-us__agreement-label {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 17px;
+    color: #323232;
+    margin-bottom: 3px;
+}
+
+.call-us__agreement-label input {
+    display: none;
+}
+
+.span {
+    padding-left: 30px;
+    position: relative;
+}
+
+.span::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #C9C9C9;
+    box-sizing: border-box;
+    border-radius: 2px;
+    left: 0;
+    top: -2px;
+}
+
+.span::after {
+    content: "\2714";
+    position: absolute;
+    left: 2px;
+    top: 0;
+    color: #93E08C;
+    display: none;
+}
+
+.call-us__agreement-label input:checked + .span::after {
+    display: block;
+}
+
+
+.form__field {
+    height: 48px;
+    box-shadow: none;
+
+}
+
+.form__field:focus {
+ 
+    box-shadow: none;
+    border-color: #93E08C;
+}
+
+.date-label {
+    display: block;
+}
+
+.react-datepicker-wrapper {
+    width: 100%;
+}
+
+.btn {
+    padding: 12px 24px;
+    background: linear-gradient(98.3deg, #93E08C -1.93%, #78CEBF 97.03%);
+    border-radius: 3px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    color: #323232;
+    margin-top: 24px;
+}

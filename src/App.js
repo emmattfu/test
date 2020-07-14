@@ -1,24 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from "react";
+
+import "./styles/styles.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { Header, Home, Footer } from "./components";
+import {Route} from 'react-router-dom'
+
+
 
 function App() {
+  const [data, setData] = useState('')
+
+  useEffect(() => {
+    fetch('http://localhost:3000/page.json')
+    .then(resp => resp.json())
+    .then(pageInfo => setData(pageInfo))
+  }, [])
+
+  if (!data) {
+    return (
+      <div className="App">
+        <Header />
+        <h1>Loading data...</h1>
+        <Footer />
+      </div>
+    );
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Route exact render={() => <Home  {...data}/>} path="/"/>
+      <Footer />
     </div>
   );
 }
