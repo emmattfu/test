@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Slider from "react-slick";
 
 import one from '../img/1.jpg'
@@ -11,18 +11,43 @@ import six from '../img/6.jpg'
 import '../styles/_slick.css'
 import '../styles/_slickTheme.css'
 
-
 function GaleryComponent({images, slidesPerView}) {
+  const [width, setWidth] = useState(window.innerWidth)
   const imgs = [one, two, three, four, five, six, one, two]
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: slidesPerView,
-    slidesToScroll: 3,
-   
-  };
+  useEffect(() => {
+   function resizeHandle(e) {
+      setWidth(e.target.innerWidth)
+    }
+
+    window.addEventListener('resize', resizeHandle)
+
+    return () => {
+      window.removeEventListener('resize', resizeHandle)
+    }
+  }, [])
+
+  let settings ={}
+
+   if (width > 767) {
+     settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: slidesPerView,
+      slidesToScroll: 3
+    };
+   } else {
+     settings = {
+      dots: true,
+      arrows: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 2,
+      slidesToScroll: 2
+    };
+   }
+
 
   return (
     <div>

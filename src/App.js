@@ -1,12 +1,9 @@
 import React, {useState, useEffect} from "react";
 
-import "./styles/styles.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { Header, Home, Footer } from "./components";
-import {Route} from 'react-router-dom'
+import {Route} from 'react-router-dom';
 
-
+import "./styles/styles.css";
 
 function App() {
   const [data, setData] = useState('')
