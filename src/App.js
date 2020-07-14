@@ -9,7 +9,7 @@ function App() {
   const [data, setData] = useState('')
 
   useEffect(() => {
-    fetch('http://localhost:3000/page.json')
+    fetch('https://gist.github.com/alexandrov-va/7f353ca822d074d7ce22d3af3d13696f')
     .then(resp => resp.json())
     .then(pageInfo => setData(pageInfo))
   }, [])
@@ -34,3 +34,4 @@ function App() {
 }
 
 export default App;
+
